@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 2rem;
+}
+h1{
+    text-align: center;
+}
+h1 a{
+    text-decoration: none;
+}
+header, footer{ /*a virgula cria um grupo, ou seja, a formatação vale pro grupo todo*/
+    background-color: rgb(94, 163, 242);
+    padding: 2rem;
+}
+nav ol{
+    display: flex; /*permite que os filhos do ol fiquem um ao lado do outro (sempre aplicado no container)*/
+    justify-content: center;
+    list-style-type: none; /*tira os marcadores (pode colocar no li tbm)*/
+}
+nav a{
+    background-color: rgb(0, 0, 0);
+    padding: 1rem; 
+    /*Como o âncora é uma marcação do tipoo "inline", o padding não funciona bem, isto é, o espaçamento fica sobre outros elementos... para mudar isso usamos o "displey: inline-block" (o Block deixa tudo um abaixo do outro, O Inline-block permite um comportamento híbrido, isto é, ficará um ao lado do outro (como inline) e permitirá a definição de padding e width (que é possível com o "block")*/
+    width: 15rem;
+    display: inline-block;
+    text-align: center;
+    margin: 0.5rem;
+    text-decoration: none; /*tirar o sublinhado*/
+    color: white;
+}
+nav a:hover{
+    background-color: rgb(67, 152, 255);
+}
+main{
+    width: 70rem; /*o ideal é pesquisar a largura dp site que se encaixe melhor no público dos que o acessam - google analytics*/
+    margin: 0 auto; /*colocar no centro*/
+    /*outra forma de colocar no centro: justify-content: center*/
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap; 
+    /*(*precisa definir a largura)
+    O "wrap" QUEBRA a linha quando os elementos passam do espaço do container*/
+}
+main section{
+    border: 1px solid black; /*espessura, estilo, cor*/
+    /*usei px porque é o menor valor, para ficar com a espessura mínima*/
+    border-radius: 2rem;
+    padding: 2rem;
+    margin: 2rem;
+    width: 26rem;
+}
+footer{
+    text-align: center;
+}
