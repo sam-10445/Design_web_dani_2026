@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CADASTRO DE ESTÁGIO</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <h1>DIRETORIA DE EXTENSÃO - DIREX</h1>
+    <h2>CADASTRO PARA ESTÁGIO</h2>
+
+    <!--O formulário serve para enviar e receber dados-->
+    <form action="resposta.html" method="get"> 
+        <!--
+        method get - deixa os dados na url
+        method polt (?)
+        -->
+        <label for="nome"> 
+            Nome:
+        </label> 
+        <!-- label: rótulo 
+        a marcação de label é mais para ACESSIBILIDADE! 
+        o input pode ficar dentro da marcação ou não 
+        (nesse caso precisa ter o for)
+        -->
+        <input type="text" id="nome" name="nome" placeholder="Digite seu nome" disabled maxlength="6"> 
+        <!--
+        * input: entrada de dados, existem vários tipos: texto, telefone, email, arquivo...
+        * id: importante porque é o IDENTIFICADOR!
+        * o placeholder é para colocar um indicativo dentro do campo
+        * disabled - comando de desativar (vai ativando os campos a medida que a pessoa vai digitando)
+        * maxlenngth é a quantidade de caracteres maximos que podem ser digitados naquele campo (tem o min tbm) 
+        -->
+        <br>
+
+        <label for="email">
+            <!--for é 'para', para qual input esse label está relacionado-->
+            <!--quando o input está fora da label tem que colocar o for para fazer uma ligação-->
+            E-mail: 
+        </label>
+        <input type="email" id="email" value="samara@gmail.com">
+        <!--
+            o valor do value pode vir do banco de dados, 
+            para o caso de um formulário de "edição"
+        -->
+
+        <br>
+        <label for="senha">
+            Senha:
+        </label>
+        <input type="password" id="senha">
+        <br>
+
+        <label for="curriculo">
+            Currículo:
+        </label>
+        <input type="file" id="curriculo">
+        <br>
+        <!--
+        o tipo "file" anexa um arquivo
+        -->
+
+        <label for="nascimento">
+            Data de nascimento:
+        </label>
+        <input type="date" name="nascimento" id="nascimento">
+        <!--
+        o "name" e o "id" são identificadores do input
+        a linguagem de programação vai escolher se quer o valor do nome ou id
+        -->
+        <br>
+
+        <label for="uf">
+            Estado:
+        </label>
+        <select name="uf" id="uf">
+            <!-- colocar o "multiple" do lado do id deixa as opções abertas-->
+            <option value="rn">Rio Grande do Norte</option>
+            <option value="pe">Pernambuco</option>
+            <option value="pb">Paraíba</option>
+        </select>
+        <br>
+
+        <input type="submit" value="ENVIAR">
+    </form>
+
+</body>
+</html>
