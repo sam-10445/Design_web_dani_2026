@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVASCRIPT - AULA 1</title>
+
+    <script>
+        /*
+        1. para usar o Java Script há 3 possibilidades:
+           tag de script incorporado, tag de script externo ou dentro da tag (não recomendada)
+        2. É uma linguagem de programação frontend (lado do cliente)
+        3. Java Script NÃO É Java
+        4. js serve para criar comportamento para o desenvolvimento web
+        5. exmplos de uso: galerias de fotos, validação de formulários, 
+           modal (janela que abre sobre a página)
+        6. frameworks em javascript são usados para agilizar/facilitar 
+           o desenvolvimento - exemplo: bootstrap 
+        */
+    </script>
+</head>
+<body>
+    <h1>JAVASCRITP - AULA 1</h1>
+    <h2>OBJETO WINDOW</h2>
+    <script>
+        //window.alert('Olá mundo!'); 
+        /*window é um objeto e alert é um método (que retorna uma janela)*/
+        //let fds = window.confirm('Como foi o fim de semana?');
+        /*let é uma variavel q o valor pode mudar depois*/
+        /*o método confirm (mostra: ok ou cancelar) que retorna true ou false e coloca na variavel*/
+        //window.alert(fds); /*mostra a variavel fds*/
+        let cor = window.prompt('Qual sua cor favorita?'); /**/
+        //window.alert(cor); 
+    </script>
+
+    <h2>OBJETO DOCUMENT</h2>
+
+    <p id="nome">IFRN CNAT INFOWEB</p><!--precisa ser o mesmo id que coloca na linha 40-->
+    <script>
+        document.getElementById('nome').style.color = cor;
+        //pega o elemento que tem o id que eu colocar ('id')
+        //dom - modelo de objeto do documento (arvore q o html vai criar dentro do navegador)
+        //por isso o parágrafo com id pricisa ficar antes do comando (ele precisa ser criado primeiro)
+
+        /*
+        document é um objeto
+        getElementById ´eum método que pega o elemento que tem o 'id' igual a 'nome'
+        style é uma propriedade, assim como 'color'
+        'green' é o valor relacionado com a propriedade color
+        */
+
+        document.getElementById('nome').innerHTML = 'INFOWEB, HOJE TEM ABAERTURA!'
+        //innerHTML - inserir html na marcação que tem o id dos parenteses
+        document.write("<p>MARCAÇÃO INSERIDA PELO JS</p>")
+        //o método write escreve no html
+    </script>
+
+    <h2>VARIÁVEIS</h2>
+    <script>
+        let curso = 'infoweb'; // string: usar aspas
+        let num = 3;
+        let num2 = 5;
+        let float = 3.5;
+        let boo = true;
+
+        //para definir uma variável é necessário usar 'let' ou const
+        // 'let' é para variável que poderá mudar o valor depois...
+        //'const' é uma variável que não mudará o valor depois (isto é, uma 'constante')
+
+        console.log(num+num2);
+    </script>
+
+</body>
+</html>
