@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays e Math</title>
+</head>
+<body>
+    <h1>Arrays e Math</h1>
+
+    <h2>Arrays</h2>
+    <p>Array é uma lista de itens.</p>
+
+    <p id="retorno"></p>
+    <script>
+        // criação de uma lista em JS (Arr)
+        const alunos = ["Thalis", "Rebeca", "Joyce", "Juan", "Samara", "José Hiago", "Leonardo", "Osvaldo", "Rafael", "Júlia", "Yasmim", "Elverty"]
+        // a variável de lista é uma constante porque não mudará, ainda podemos inserir e aumentar o tamanho, manipular de modo geral
+        /*
+        OUTRAS FORMAS DE SE CRIAR LISTAS:
+
+        const alunos = []
+        alunos[0] = "Juan";
+        alunos[1] = "Júlia"
+
+        ou 
+
+        const alunos = new Array("Thalis", "Rafael", "Osvaldo")
+        */
+
+        //método para utilizar nos Arrays, retorna os itens em formato de texto, separados por vírgula
+        document.getElementById("retorno").innerHTML = alunos.toString();
+
+        //acessar um item da lista
+        document.getElementById("retorno").innerHTML = alunos[3];
+
+        //transformar a lista em um formato JSON
+        document.getElementById("retorno").innerHTML = JSON.stringify(alunos)
+
+        //comprimento - número total
+        document.getElementById("retorno").innerHTML = alunos.length;
+
+        //acessar o último item
+        document.getElementById("retorno").innerHTML = alunos[alunos.length-1]
+
+        //ordenando a lista
+        document.getElementById("retorno").innerHTML = alunos.sort();
+
+        //adicionando um item
+        document.getElementById("retorno").innerHTML = alunos.push("DANI");
+        document.getElementById("retorno").innerHTML = alunos.toString(); //retornando a lista
+
+        //removendo item
+        document.getElementById("retorno").innerHTML = alunos.pop(); //retona o item removido
+        document.getElementById("retorno").innerHTML = alunos.toString(); //retornando a lista
+
+        //imprime a lista com um separador
+        document.getElementById("retorno").innerHTML = alunos.join(" - ");
+        document.getElementById("retorno").innerHTML = "Método <code>.join()</code>: " + alunos.join(" - ");
+
+        //O último comando sempre apaga o anterior (mas pode resolver com paragráfos ou somando os resultados)
+    </script>
+
+    <h2>Objeto Math</h2>
+    <p id="retorno2"></p>
+    <script>
+        let retorno2 = document.getElementById("retorno2");
+
+        //arredonda o valor para o inteiro mais próximo
+        retorno2.innerHTML = "Arredonda o valor 5.7 round: " + Math.round(5.7)
+
+        // .ceil() - arredonda para cima
+        // .floor() - arredonda para baixo
+
+        //retorna o valor mínimo. para o valor máximo .max
+        retorno2.innerHTML = "Valor mínimo: .min" + Math.min(5, 7, 8, 98, 32, 65, 74, 12)
+
+        //retorna um valor randômico
+        retorno2.innerHTML = "Valor randômico .random(): " + Math.random();
+
+        //retorna um número inteiro de 0 a 10
+        retorno2.innerHTML = "Valor randômico int de 0 a 10: " + Math.round(Math.random()*10)
+    </script>
+
+    <!-- Não colocamos a marcação de form porque estamos usando button -->
+    <label>
+        Nome: <input type="text" id="nome">
+    </label> <br>
+    <label>
+        Tamanho:
+        <input type="number" id="tamanho">
+    </label> <br>
+    <label>
+        Cor:
+        <select name="cor" id="cor">
+            <option value="green">verde</option>
+            <option value="blue">azul</option>
+            <option value="yellow">amarelo</option>
+            <option value="pink">rosa</option>
+        </select>
+    </label> <br>
+    <button id="gerar">GERAR</button>
+
+    <p id="txresultado"></p>
+
+    <script>
+        //o js PRECISA ficar depois das marcações com id que serão acessadas
+        let gerar = document.querySelector("#gerar"); 
+        // querySelector é imilar ao getElementById, a diferença é que precisamos colocar # para id e . para class (ele pode retornar várias marcações)
+
+        let txresultado = document.querySelector("#txresultado");
+
+        gerar.addEventListener("click", function (e){
+            //alert("oi")
+            let nome = document.querySelector("#nome").value; //pega o nome que foi digitado
+            //textContent - é uma propriedade que pega o conteúdo da marcação
+            //.value é uma propriedade que pega o valor de um input
+            let tamanho = document.querySelector("#tamanho").value;
+            txresultado.style.fontSize = tamanho+"rem";
+            //PARA DEFINIR CSS, É SÓ COLOCAR .style e o .atributo (se o atributo for composto, como font-size, a segunda palavra ficará com a 1 letra maiuscula)
+            //alert(nome);//imprimir o nome q foi digitado
+            txresultado.innerHTML = nome; 
+
+            let cor = document.querySelector("#cor").value;
+            txresultado.style.color = cor;
+        })
+
+    </script>
+</body>
+</html>
