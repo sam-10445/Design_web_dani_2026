@@ -1,0 +1,24 @@
+<!-- Listar os números de -10 A 10 -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listar os números de -10 A 10</title>
+</head>
+<body>
+    <h1>Listar os números de -10 A 10</h1>
+    <p id="resp"></p>
+
+    <script>
+
+        for (let x = -10; x <= 10; x++){
+            //console.log(x); *printar só no console
+            resp = document.getElementById('resp').innerHTML += x + "<br>"
+        }
+
+    </script>
+
+</body>
+</html>

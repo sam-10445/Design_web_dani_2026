@@ -1,0 +1,21 @@
+<!-- Imprimir os números de 1 a 5 com tamanhos de texto diferentes -->
+ <!DOCTYPE html>
+ <html lang="pt-br">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamanho aleátorio</title>
+ </head>
+ <body>
+    <h1>Tamanho aleátorio de 1 a 5</h1>
+    <p id="resp"></p>
+
+    <script>
+
+        for (let x = 0; x <= 5; x++){
+            document.getElementById('resp').innerHTML += `<p style = 'font-size: ${Math.random()*10}rem'>${x}</p>`
+        }
+
+    </script>
+ </body>
+ </html>
