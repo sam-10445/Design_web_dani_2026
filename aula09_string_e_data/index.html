@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STRING e DATA</title>
+</head>
+<body>
+    <h1>STRING e DATAS</h1>
+    <script>
+        for(let num = 0; num <= 10; num++){
+            console.log(num)
+        }
+    </script>
+
+    <h2>STRING</h2>
+    <script>
+        let nome = 'INFOWEB';
+        console.log('Comprimento da String '+ nome.length); //na variável
+        console.log('Comprimento da String '+ 'SAMARA'.length); //direto no string
+        console.log(`Comprimento da String ${'SAMARA'.length}`); //pode usar ` ao invés de aspas
+
+        console.log(`Posição do caracter na String: ${nome.charAt(0)}`);
+        //recebe a posição ex: 0 -> primeiro item (I)
+
+        console.log(`Substitui na String: ${nome.replace('INFO', 'Informática para ')}`)
+        //substtuiu o "INFO" por "Informática para"
+
+        console.log(`Fatia a String: ${nome.slice(1, 4)}`)
+        //recebe a posição inicial e a posição final (números inteiros)
+
+        console.log(`Coloca em maiúsculas: ${'ifrn'.toUpperCase()}`)
+        console.log(`Coloca tudo em minúsculas: ${nome.toLowerCase()}`)
+    </script>
+
+    <!-- EXERCÍCIO PRÁTICO -->
+    <h2>Exemplo com String</h2>
+    <p id="resultado"></p>
+    <script>
+        let nome2 = 'Design WEB'
+        for(let i = 0; i <= nome2.length; i++){
+            //document.getElementById('resultado').innerHTML += '-' //toda vez q ele encontra uma letra, ele coloca um tracinho
+            //.getElementById('resultado').innerHTML += nome2.charAt(i) //imprimindo uma letra por vez
+
+            document.getElementById('resultado').innerHTML += '<span style=font-size:'+(i+1)+'rem >'+ nome2.charAt(i)+'<span>'
+        }
+    </script>
+
+    <h2>DATAS</h2>
+    <p id="datahoje"></p>
+    <p id="data"></p>
+    <p id="infoweb">INFOWEB</p>
+
+    <p id="horahoje"></p>
+    <script>
+        //funções nativas para Data
+        const data = new Date();
+        //como o js esta no front, a data que será usada é a do PC, se esta estiver errada, ficará errada...
+
+        console.log('Data de hoje: '+data.getDate());
+        console.log('Mês atual: '+data.getMonth()); 
+        console.log('Ano completo: '+data.getFullYear()); //o mês tem uma peculiaridade (o mês é sempre 1 a menos)
+        console.log('Minuto: '+data.getMinutes())
+        console.log('Segundo: '+data.getSeconds())
+        console.log('Hora: '+data.getHours())
+
+        const cores = ['pink', 'yellow', 'red'];
+        //Math.random()
+        //Math.round()
+
+        //CRIAR UMA FUNÇÃO NO JS:
+        function horaatual(){ //sintaxe de definição de função
+            var d = new Date();
+            //document.querySelector('#data').innerHTML = d.getSeconds();
+            document.querySelector('#data').innerHTML = `<span style=font-size:${d.getSeconds()}em >${d.getSeconds()}</span>`
+        }
+        setInterval(horaatual, 1000);
+        //setInterval é um timer que recebe o nome da função sem parâmetros e o tempo em milisegundos
+
+        //!!! - DEVER DE CASA !!! A CADA SEGUNDO IMPRIMIR O NOME 'INFOWEB' COM CORES DIFERENTES
+        function mix_cores(){ //sintaxe de definição de função
+            var c = new Date();
+            //document.querySelector('#data').innerHTML = d.getSeconds();
+            document.querySelector('#infoweb').innerHTML = `<span style=color:${cores[d.getSeconds()]}>${d.getSeconds()}</span>`
+        }
+
+    </script>
+
+    <!--ATIVIDADE: Imprimir data certinho-->
+    <script>
+        const hoje = new Date();
+
+        document.getElementById('datahoje').innerHTML += (`Data de hoje: ${hoje.getDate()}/${hoje.getMonth() + 1}/${hoje.getFullYear()}`)
+        document.getElementById('horahoje').innerHTML += (`Horário: ${hoje.getHours()}:${hoje.getMinutes()}:${hoje.getSeconds()}`)
+    </script>
+</body>
+</html>
