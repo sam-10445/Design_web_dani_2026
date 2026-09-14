@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicios Js - String e Datas</title>
+</head>
+<body>
+    <h1>Exercicios Js - String e Datas</h1>
+    <h2>1. Imprimir a data certinho:</h2>
+
+    <p id="hoje"></p>
+    <script>
+        const data  = new Date()
+
+        document.getElementById('hoje').innerHTML += `Data de hoje: ${data.getDate()}/${data.getMonth() + 1}/${data.getFullYear()}`
+    </script>
+
+    <h2>2. Timer de segundos:</h2>
+
+    <p id="time"></p>
+    <script>
+        //criar a função:
+        function momento (){
+            var d = new Date()
+            document.querySelector('#time').innerHTML = `${d.getSeconds()}`
+        }
+        //timer que repete a função:
+        setInterval(momento, 1000)
+    </script>
+
+    <h2>3. Timer de segundos com tamanho</h2>
+
+    <p id="time_tamanho"></p>
+    <script>
+        function momento_tam (){
+            var dt = new Date()
+            document.querySelector('#time_tamanho').innerHTML = `<span style=font-size:${dt.getSeconds()}px>${dt.getSeconds()}</span>`
+        }
+        setInterval(momento_tam, 1000)
+    </script>
+
+    <h2>4. A cada segundo imprimi um determinado nome com uma cor diferente da lista</h2>
+    <p id="nome"></p>
+
+    <script>
+        const cores = ['blue', 'pink', 'yellow', 'purple', 'black', 'orange']
+        indice = 0
+
+        function nome_cor (){
+            var agora = new Date()
+            document.querySelector('#nome'). innerHTML = `<p style=color:${cores[indice]}>Não sei o que escrever :P </p>`
+            indice++
+
+            //se o indice chegar ao final da lista:
+            if(indice == cores.length){
+                indice = 0
+            }
+        }
+        
+        setInterval(nome_cor, 1000)
+
+        //SE SÓ FICAR LARANJA (ORANGE) usando ForEach:
+        // O forEach percorre todas as cores de uma vez, então a cor do nome
+        // é alterada várias vezes no mesmo segundo. Como "orange" é a última
+        // cor da lista, ela sobrescreve todas as anteriores e permanece na tela.
+        // O setInterval apenas repete esse processo a cada segundo.
+        // Para resolver, usamos uma variável (indice) para controlar qual cor
+        // será usada. A cada segundo, apenas uma cor é aplicada ao nome.
+        // Depois, o índice aumenta para passar para a próxima cor. Quando
+        // chega ao final da lista, o índice volta para 0 e o ciclo recomeça.
+    </script>
+</body>
+</html>
