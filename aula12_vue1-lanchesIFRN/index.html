@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LANCHES IFRN</title>
+</head>
+<body>
+    
+    <div id="app">
+        <app-header></app-header>
+        <!-- preciso da marcação de abertura e fechamento e precisa ficar dentro da marcação com o id 'app'-->
+        <p> {{mensagem}}!! Hoje o lanche é: {{lanches[0]}}</p>
+        <!-- chamada da variável dentro do html, para isso é necessário usar as duplas chaves (chamar variável: duplas chaves)-->
+
+        <ol>
+            <li v-for="(ano, index) in anos" :key="index"> {{ano}} </li>
+            <!-- 
+            O v-for é uma 'diretiva' usada para estruturas de repetição
+            usa 2 variáveis de controle, neste exemplo: lanche para um item e index para o inicial
+            -->
+        </ol>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="header.js"></script> <!--tem que chamar o arquivo-->
+    <script src="script.js"></script>
+    <script src="footer.js"></script>
+
+    <!-- PASSOS PARA CRIAÇÃO DO COMPONENTE:
+        1. Criar a variável em um arquivo separado
+        2. Chamar o método de componente
+        3. Incluir o Js tem que ser depois do js do vue e antes do js do script
+        4. Colocar a marcação do componente no local que quiser no código html
+    -->
+    <app-footer></app-footer>
+</body>
+</html>
