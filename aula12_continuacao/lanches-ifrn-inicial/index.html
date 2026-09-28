@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LANCHES IFRN</title>
+    <link rel="stylesheet" href="inc/principal.css">
+</head>
+<body>
+    <div id="app">
+        <app-header></app-header>
+        <main>
+        <h1>{{ mensagem }}</h1>
+        <p>
+
+        </p>
+        <ol>
+            <li v-for="lanche in lanches" 
+                    class="lanche"      
+                    :class="{selecionado: lanche.ativo}"
+                    @click="mudarAtivo(lanche)"
+            > 
+                <!--
+                    ":class" é uma chamada dinâmica do vue para colocar o valor 
+                    'selecionado' na class para quando o lanche.ativo for igual a true
+
+                    @click é um evento do vue que vai chamar um método
+                -->
+                <!-- diretivas são atributos -->
+                {{lanche.descricao}}  - {{lanche.ativo}}
+                <img :src="'imagens/'+lanche.imagem" width="50" /> 
+                <!--
+                    :src vira um atributo dinâmico que recebe um valor vue,
+                    por isso é necessário colocar 'imagens/' entre aspas
+                -->
+            </li>
+        </ol>
+        </main>
+        <app-footer></app-footer>
+    </div>
+
+    
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="inc/header-footer.js"></script>
+    <!-- precisa vir nessa ordem!! -->
+    <script src="inc/script.js"></script>
+</body>
+</html>
