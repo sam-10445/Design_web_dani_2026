@@ -1,0 +1,29 @@
+/*CSS GLOBAL PARA O SITE:*/
+
+body{
+    background-color: #FFF7E8;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+header {
+    text-align: center;
+    background-color: #FFF1D6;
+    padding: 25px;
+}
+
+header h1 {
+    margin: 0 0 20px 0;
+    font-family: Arial, sans-serif;
+    color: #D889A3;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    color: #6B5B55;
+}
