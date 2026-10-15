@@ -1,0 +1,36 @@
+<!-- Fazer um formulário pedindo um nome e ao clicar no botão mostrar esse nome impresso 5 vezes, onde cada vez terá um tamanho de 1rem até 5rem -->
+ <!DOCTYPE html>
+ <html lang="pt-br">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nome 5x de 1rem até 5rem</title>
+ </head>
+ <body>
+    <h1>Nome 5x de 1rem até 5rem</h1>
+
+    <form>
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome">
+
+        <input id="enviar" type="button" value="ENVIAR"> 
+        <!-- o input é do tipo "button" e não "submit" porque o submit recarrega a página tentando mandar as informações pra outro lugar, não permitindo ver o resultado -->
+    </form>
+    <p id="resp"></p>
+
+    <script>
+        let botao = document.getElementById('enviar')
+
+        botao.addEventListener('click', function(e){
+            let nome = document.getElementById('nome').value 
+            //!!! consegue pegar o valor que foi digitado no input (o nome) com .value
+            for (let x = 1; x <= 5; x++){
+                document.getElementById('resp').innerHTML += `<p style="font-size: ${x}rem">${nome}</p>`
+            }
+        })
+        
+        
+    </script>
+
+ </body>
+ </html>

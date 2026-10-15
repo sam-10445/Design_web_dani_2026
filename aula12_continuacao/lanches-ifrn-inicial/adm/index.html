@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LANCHES IFRN</title>
+    <link rel="stylesheet" href="../inc/principal.css">
+</head>
+<body>
+    <div id="app">
+        <app-header></app-header>
+        <main>
+            <h2>DASHBOARD ADMINISTRATIVO </h2>
+            <p>
+                Total de itens de lanches inseridos: {{ lanches.length }} 
+                <!--
+                    length - propriedade de lista que pega o comprimento,
+                    neste caso nos retorna o número total de itens inseridos em lanches
+                -->
+            </p>
+
+            <fieldset class="adicionar">
+                <!--fielset é uma marcação que organiza componentes no formulário-->
+                <!--a marcação de form não é usada aqui porque não iremos submeter dados para o back-->
+                <legend>Inserir lanches</legend>
+                <input type="text" placeholder="Novo lanche..." v-model="novoLancheInput">
+                <!-- v-model é a cuminicação de envio de dados para o vue (tipo o id do input que a gente usava antes)-->
+                <button class="add" @click="novoLanche()">INSERIR</button>
+                <!-- @click é o evento de click que chama a função novoLanche-->
+            </fieldset>
+            
+            <ol>
+                <li v-for="lanche in lanches" class="lanche">
+                    {{lanche.descricao}}
+                </li>
+            </ol>
+
+        </main>
+        
+        <app-footer></app-footer>
+
+    </div>
+
+
+    
+    
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="../inc/header-footer.js"></script>
+    <!-- precisa vir nessa ordem!! -->
+    <script src="../inc/script.js"></script>
+</body>
+</html>

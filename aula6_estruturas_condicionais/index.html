@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVASCRIPT - DIA 2</title>
+</head>
+<body>
+    /*IMPORTANTE!: 
+    TODOS OS COMANDOS COM O OBJETO "console.x" SÓ SÃO EXIBIDOS NO inspecionar -> console*/
+    <h1>JAVASCRIPT</h1>
+    <h2>Operadores aritméticos</h2>
+
+    <script>
+        console.log('OPERADORES ARITMÉTICOS');
+        console.log(54+98);
+        console.log(548-98);
+        console.log(98*65);
+        console.log(65/8);
+        let a = 8;
+        /*INCREMENTO: +1*/
+        //incrento: quando o "++" está depois, a variável é impressa e só depois adiciona +1
+        console.log(a); //imprimir "a"
+        console.log(a++); //imprimi o "a" e depois encrementa (antes - quando print 8 - depois que encrementa fica 9)
+        console.log(a);  //imprimi o "a" encrementado (9)
+        //incremento: quando o "++" é antes a variável já recebe +1 e depois é impressa
+        console.log(++a); //encrementa e depois printa 
+        /*DECREMENTO: mesma lógica do incremento, mas para -1*/
+        console.log(a--); 
+        console.log(--a); 
+    </script>
+
+    <h2>Operadores Relacionais</h2>
+    <script>
+        console.log(4 == "4"); //true (avalia se são iguais, mas não no tipo de variável: int, string ...)
+        console.log(4 === "4"); //false (avalia se são iguais no tipo e no valor)
+        console.log(4 != 6); // se são diferentes
+        console.log(4 > 7); // <=, >= ...
+        console.log(4 == 6 && 5 == 8); //&& retorna verdadeiro se ambas forem verdadeiras (and)
+        console.log(4 == 6 || 5 == 7); // || retorna verdadeiro se uma for verdadeira (or)
+    </script>
+
+    <h2>ESTRUTURA CONDICIONAL</h2>
+    <script>
+        let lanche = 'bolo';
+        if(lanche == 'bolo'){ //é necessário colocar um operador condicional
+            console.log('EBAA! HOJE É BOLO!')
+        }
+        else
+            console.log(':(');
+
+        //IF's ANINHADOS: 
+        lanche = 'cuscuz'; //só precisa usar let antes da variavel quando for cria-la, n precisa mudar quando for alterar o valor
+        if(lanche == 'bolo'){
+            console.log('HOJE É BOOOOLO!!')
+        }else
+            if (lanche == 'cuscuz'){
+                console.log('HOJE É CUSCUZ!!!')
+            }
+
+        //ESTRUTURA CONDICIONAL: switch
+        let opcao = 2; 
+        switch(opcao){ //só pode colocar uma variável
+            /*é necessário colocar a variável no parenteses*/
+            case 1: console.log('O valor é 1'); break;
+            case 2: console.log('O valor é 2'); break;
+            case 3: console.log('O valor é 3'); break;
+            default: console.log('Nenhuma das opções!'); //quando não é nenhum dos casos
+        }
+
+        opcao = 'handebol'; 
+        switch(opcao){ //só pode colocar uma variável
+            /*é necessário colocar a variável no parenteses*/
+            case 1: console.log('BASQUETE!'); break; //O "break" é necessário para PARAR o switch
+            case 2: console.log('HANDEBOL!'); break;
+            default: console.log('Nenhuma das opções!'); //quando não é nenhum dos casos
+        }
+    </script>
+
+    <!-- marcação de button é um botão mais usado para interações 
+     com o javascript, visualmente é igual ao input do tipo submit 
+    (só que este é usado em uma marcação de form)-->
+    <!-- ! -- INCREMENTAR: -- ! -->
+    <button id="incrementar">INCREMENTAR</button>
+    <span id="resultado">0</span>
+    <!-- span é uma marcação sem valor semântico do tipo inline!-->
+
+    <script>
+        const incremantar = document.getElementById('incrementar')
+        /*const é a definição de uma variável que não mudará seu valor depois*/
+        incremantar.addEventListener("click", function(e){
+            //let resultado = document.getElementById('resultado').textContent;
+            document.getElementById('resultado').innerHTML = parseInt(document.getElementById('resultado').textContent)+1
+        })
+    </script>
+
+    <!-- ! -- DECREMENTAR: -- ! -->
+    <button id="decrementar">DECREMENTAR</button>
+    <span id="resultado">0</span>
+    <!-- span é uma marcação sem valor semântico do tipo inline!-->
+
+    <script>
+        const decremantar = document.getElementById('decrementar')
+        /*const é a definição de uma variável que não mudará seu valor depois*/
+        decremantar.addEventListener("click", function(e){
+            //let resultado = document.getElementById('resultado').textContent;
+            document.getElementById('resultado').innerHTML = parseInt(document.getElementById('resultado').textContent)-1
+        })
+    </script>
+</body>
+</html>

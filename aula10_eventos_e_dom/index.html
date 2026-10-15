@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos e Manipulação de DOM</title>
+    <style>
+        body{
+            height: 500rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Eventos e Manipulação de DOM</h1>
+    <form action="" name="cadastro">
+        <label>Nome: <input type="text" id="nome"></label>
+        <label>Cidade: 
+            <select id="cidade">
+                <option value="natal">Natal</option>
+                <option value="recife">Recife</option>
+                <option value="jp">João Pessoa</option>
+            </select>
+        </label>
+        <input type="submit" value="ENVIAR">
+    </form>
+    <script>
+        function bodyclick(){ //criação da função
+            console.log('body foi clicado');
+        }
+        //bodyclick() //aqui é a chamada da função (sem interação)
+        //a criação da função é apenas uma estrutura, a função precisa ser chamada!
+        document.body.addEventListener('click', bodyclick);
+        //evento click no body
+        //porém, se tiver pouco na página o body fica curto, é necessário que o body tenha altura
+        document.body.addEventListener('click', function(e){
+            //aqui eu coloco a estrutura da função
+        })
+
+        function eventoload(){
+            console.log('evento de carregar a página chamado!')
+        }
+        window.addEventListener('load', eventoload); //sempre que a página for carregada, este método será chamado 
+
+        function eventscroll(){
+            console.log('Função de scroll chamada!')
+        }    
+        window.addEventListener('scroll', eventscroll)  
+        //para esta função aparecer é necessário ter barra de rolagem na página
+        //isto é colcar height no css do body, ou a ágina já ter muito conteúdo  
+
+        const input = document.getElementById('nome');
+
+        function eventkeydown(e){
+            console.log('Evento keydown chamado!'+e.key);
+            // .key é uma propriedade que retorna a tecla digitada
+        }
+        input.addEventListener('keydown', eventkeydown);
+
+        const form = document.cadastro; //ficou simples pq pegou o nome do form
+        const cidade = form.cidade;
+        //criando variáveis para pegar campos especificos do formulário, é possível apenas usar o getElementById no select...
+        function eveentchange(){
+            console.log('Event Change chamado!')
+        }
+        cidade.addEventListener('change', eveentchange);
+        //o evento change é justamente para o camponente select
+
+        function eventmousemove(e){
+            console.log('Mouse move: '+e.clientX);
+            //clientX propriedade que pega o eixo X que o mouse está
+        }
+        window.addEventListener('mousemove', eventmousemove);
+        //evento que é chamado quando o mouse se mexe
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!-- Botão de aumentar fonte do texto do body para 2rem e diminuir a fonte do texto para 0.5rem -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botão aumenta e diminui fonte</title>
+</head>
+<body id="body">
+    <h1>Botão aumenta e diminui fonte</h1>
+    <p>texto de teste</p>
+
+    <button id="aumentar">AUMENTAR</button>
+    <button id="diminuir">DIMINUIR</button>
+    
+    <script>
+
+        const botao_aum = document.getElementById('aumentar')   
+        const botao_dim = document.getElementById('diminuir') 
+        
+        botao_aum.addEventListener('click', function(e){
+            document.getElementById('body').style.fontSize = '2rem'
+        })
+        botao_dim.addEventListener('click', function(e){
+            document.getElementById('body').style.fontSize = '0.5rem'
+        })
+
+
+    </script>
+
+</body>
+</html>

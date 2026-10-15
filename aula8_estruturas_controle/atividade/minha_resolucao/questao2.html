@@ -1,0 +1,26 @@
+<!-- Fazer um array com nomes de cores (7) e imprimir o seu nome (7 vezes) com as cores que estão no array -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nomes e cores</title>
+</head>
+<body>
+    <h1>Nomes e cores</h1>
+    <p id="nome"></p>
+
+    <script>
+
+        let cores = ['blue', 'green', 'pink', 'black', 'purple', 'red', 'yellow']
+
+        for (let x = 0; x <= 6; x++){
+            document.getElementById('nome').innerHTML += `<p style='color: ${cores[x]}'>Samara</p><br>`
+            //innerHTML altera o CONTEÚDO, não tem nada haver com estilo, ou seja, aqui não alterou apenas o estilo, mas todo o conteúdo do <p>
+        }
+        
+
+    </script>
+</body>
+</html>

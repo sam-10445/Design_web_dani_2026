@@ -1,0 +1,20 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    margin: 2rem;
+}
+label{
+    display: inline-block; /*a marcação de label é inline, então para se colocar largura e espaçamento é preciso alterar o display (o comportamento)*/
+    width: 10rem; /*largura*/
+    background-color: beige; /*cor de funfo*/
+    padding: 0.5rem; /*espaçamento interno*/
+    margin: 0.5rem; /*espaçamento externo*/
+}
+input[type='submit']{
+    background-color: black;
+    color: white; /*cor da fonte*/
+    margin: 0.5rem; 
+}
