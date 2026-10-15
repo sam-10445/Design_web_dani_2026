@@ -1,7 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+import './assets/css/main.css' //improtando o css global
+import router from './router' //importando as rotas/páginas (router)
 
-import './assets/css/main.css' //importar o css global
-import router from './router' //importar o router para adicionar novas páginas
-
-createApp(App).use(router).mount('#app') //crie o App usando Router ...?
+createApp(App).use(router).mount('#app')

@@ -1,19 +1,18 @@
 <template>
-  <HeaderSection /> <!--incluir o novo componente-->
-  <router-view /> <!--incluindo novas páginas-->
-  
+  <HeaderSection></HeaderSection>
+  <router-view />
+
   <main>
-    
   </main>
 </template>
 
 <script>
-import HeaderSection from './components/HeaderSection.vue'; //incluir o novo componente
+import HeaderSection from './components/HeaderSection.vue';
 
 export default {
   name: 'App',
   components: {
-    HeaderSection //incluir o novo componente
+    HeaderSection
   }
 }
 </script>

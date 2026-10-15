@@ -1,27 +1,19 @@
 <template>
-  <article>
-    <h2>Sabores de Sorvetes</h2>
-    <ul>
-        <li>Chocolate</li>
-        <li>Creme</li>
-        <li>Morango</li>
-        <li>Flocos</li>
-        <li>Coco</li>
-        <li>Pistache</li>
-        <li>Romeu e Julieta</li>
-    </ul>
-  </article>
+    <article>
+        <h2>Sabores de Sorvete</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime praesentium eum consequatur tenetur illo asperiores. Dolorem similique enim ipsa! Architecto aliquid corporis, minus magnam recusandae dicta quis culpa amet sed!</p>
+    </article>
 </template>
 
 <script>
 export default {
-  name: 'SaboresView'
+    name: 'SaboresView'
 }
 </script>
 
-<style scoped> /*Lembrar que o "scoped" serve para aplicar o css só a esse arquivo*/
+<style scoped>
 article {
-  padding: 20px;
-  text-align: center;
+    padding: 20px;
+    text-align: center;
 }
 </style>
