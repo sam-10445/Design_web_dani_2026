@@ -15,7 +15,7 @@
 
 <script>
 export default {
-  name: 'SorvetesView'
+  name: 'SaboresView'
 }
 </script>
 
