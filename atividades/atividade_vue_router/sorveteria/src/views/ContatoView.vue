@@ -1,4 +1,3 @@
-```vue
 <template>
     <article>
         <h2>Contato</h2>
@@ -51,4 +50,3 @@ h3 {
     margin-top: 30px;
 }
 </style>
-```

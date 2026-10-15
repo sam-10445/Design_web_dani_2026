@@ -1,4 +1,3 @@
-```vue
 <template>
     <article>
         <h2>Sabores de Sorvete</h2>
@@ -54,4 +53,3 @@ h3 {
     margin-top: 30px;
 }
 </style>
-```
