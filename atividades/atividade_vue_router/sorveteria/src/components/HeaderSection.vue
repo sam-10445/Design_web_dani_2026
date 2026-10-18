@@ -1,6 +1,6 @@
 <template>
     <header>
-        <h1><router-link to="/">Sorveteria da Sam :3</router-link> </h1>
+        <h1><router-link to="/">Sorveteria da Sam</router-link> </h1>
         <nav>
             <ol>
                 <li><router-link to="/sabores">Sabores</router-link></li>

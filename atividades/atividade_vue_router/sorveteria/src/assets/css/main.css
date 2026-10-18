@@ -1,14 +1,26 @@
+body{
+    margin: 0;
+    padding: 0;
+    display: block;
+}
 header {
+    margin-top: 0;
     text-align: center;
     background-color: #FFF1D6;
-    padding: 25px;
+    padding: 5rem;
 }
 
 header h1 {
-    margin: 0 0 20px 0;
+    font-size: 4em;
+    margin: 20px;
     font-family: Arial, sans-serif;
     color: #D889A3;
     text-decoration: none;
+}
+
+header h1 a { /*tirar o sublinhado do h1*/
+    text-decoration: none;
+    color: #6A1B9A;
 }
 
 nav ol {
@@ -31,4 +43,11 @@ nav a {
 
 nav a:hover {
     background-color: #C87591;
+}
+
+#app { /*tirar os espaços padrões de margem do app*/
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: none;
 }
