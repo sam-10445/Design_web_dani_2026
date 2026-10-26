@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CADASTRO CURRÍCULO</title>
+</head>
+<body>
+    <form action="">
+        <label for="nome">NOME: </label>
+        <input type="text" id="name"> <br>
+
+        <p>QUAL SUA PREFERÊNCIA DE ÁREA: <br>
+            <label for="pref-design">
+                <input type="checkbox" id="pref-design" name="pref" value="design"> DESIGN
+                <!-- PARA O INPUT DO TIPO CHECKBOX  É NECESSÁRIO COLOCAR O TEXTO
+                DEPOIS DO INPUT, COLOCAR O ATRIBUTO NAME PARA CRIAR UM GRUPO E O 
+                ATRIBUTO 'VALUE' QUE É O VALOR DO INPUT, ESTE É EQUIVALENTE AO 
+                VALOR IGITADO DE UM INPUT DO TIPO 'TEXT', O CHACKBOX É UM COMPONENTE
+                QUE PERMITE SELECIONAR VÁRIOS ITENS, ENVIAR NA PROGRAMAÇÃO UMA LISTA
+                DE ITENS SELECIONADOS (DE 0 A VÁRIOS) -->
+            </label> <br>
+            <label for="pref-manutencao">
+                <input type="checkbox" id="pref-manutencao" name="pref" value="manutencao"> MANUTENÇÃO 
+            </label> <br>
+            <label for="pref-redes">
+                <input type="checkbox" id="pref-redes" name="pref" value="redes" > REDES
+            </label> <br>
+        </p>
+        <p> EM QUAL CURSO VOCÊ ESTÁ? <br>
+            <label>
+                <input type="radio" name="curso" value="infoweb"> INFOWEB
+                <!-- COMO O INPUT ESTÁ NA LABEL, NÃO PRECISA COLOCAR 'FOR'
+                O TIPO 'RADIO' SÓ PERMITE SELECIONAR UM ITEM, O ARIBUTO
+                'NAME' É IMPRESCINDÍVEL PORQUE ELE CRIA O GRUPO DE ITENS
+                (CHECKCBOK E RADIO), SERÁ O NOME DA LISTA MA PROGRAMAÇÃO -->
+            </label> <br>
+            <label>
+                <input type="radio" name="curso" value="adm"> ADM
+            </label> <br>
+            <label>
+                <input type="radio" name="curso" value="msi"> MSI
+            </label> <br>
+        </p>
+        <label for="cidade">CIDADE:</label>
+        <input type="text" id="cidade" list="datalist-cidade">
+        <!-- O COMPONENTE DE 'DATALIST'É NOVO, PERMITE QUE O USUÁRIO SELECIONE 
+        A OPÇÃO OU DIGITE PARA CRIAR UM VÍNCULO INPUT-DATALIST É NECESSÁRIO 
+        COLOCAR O ATRIBUTO 'LIST' NO INPUT, QUE RECEBE O 'ID' DO DATALIST -->
+        <datalist id="datalist-cidade">
+            <option value="NATAL">
+            <option value="JOÃO PESSOA">
+            <option value="RECIFE">
+        </datalist> <br>
+        <label for="idade">
+            IDADE:
+        </label>
+        <input type="number" id="idade"> <br>
+        <fieldset>
+            <!-- COMPONENTE 'FIELDSET' APENAS PARA ORGANIZAÇÃO -->
+            <legend>MENSAGEM</legend> <br>
+            <!-- COMPONENTE 'LENGEND' É O TÍTULO DO GRUPO -->
+            <label for="mensagem">MENSAGEM: </label> <br>
+            <textarea name="textarea" id="textarea" cols="30" rows="10" maxlength="10"></textarea>
+            <!-- 'TEXTAREA' É UM COMPANENTE QUE PERMITE TEXTO LONGO 
+            (CUIDADO COM O BD) TEM MARCAÇÃO DE ABERTURA E FECHAMENTE, 
+            O CONTEÚDO DE 'DENTRO' É JUSTAMENTE O 'VALUE' DO INPUT, ESTÃO 
+            PERMITIDO OS ATRIBUTOS DE FORMATAÇÃO ROWS: COLUNA E COLS: LARGURA -->
+        </fieldset>
+        <input type="hidden" id="id-user" value="444">
+        <!--  QUANDO EU PRECISO COLOCAR UMA INFORMAÇÃO ESCONDIDA, POR EXEMPOLO
+        , O ID DO USUÁRIO, QUANDO EU FAÇO UM FORMULÁRIO LONGO, QUE TEM VÁRIOS
+        PÁGINAS, EU POSSO COLOCAR OS DADOS DIGITADOS NA PÁGINAS E ENVIAR PARA 
+        PROGRAMAÇÃO-->
+        <input type="submit" value="ENVIAR">
+    </form>
+</body>
+</html>

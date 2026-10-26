@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.3rem;
+}
+h1{
+    text-align: center;
+
+}
+header, footer{  /* A VÍRCULA CRIA UM GRUPO */
+    background-color: rgba(160, 109, 219, 0.486);
+    padding: 2rem;
+    color: rgb(123, 86, 167);;
+}
+nav ol{
+    display: flex; /* PERMITE QUE OS FILHOS DO OL FIQUEM UM AO LADO DO OUTRO,
+    O "DISPLAY: FLEX" É SEMPRE APLICADO NO CONTAINER*/
+    justify-content: center; /* */
+    list-style-type: none; /* TIRA S MARCADORES, PODE SER APLICADO NOS LI*/
+    padding: 0.5rem;
+    
+    gap: 30px;
+
+}
+a{
+    text-decoration: none;
+}
+nav a{ /* COMO O ÂNCORA É UMA MARCAÇÃO DO TIPO 'INLINE", O PADDING
+    NÃO FUNCIONA BEM, ISTO É, O ESPAÇAMENTO FICA SOBRE OUTROS ELEMENTOS,
+    PARA CORRIGIR ESTE COMPORTAMENTO, É NECESSÁRIO DEFINIR O DISPLAY: INLINE-BLOCK
+    VAI PERMITIR UM COMPORTAMENTO HÍBRIDO, ISTO É, FICARÁ UM AO LADO DO OUTRO
+    (COMO INLINE) E PERMITIRÁ A DEFINIÇÃO DE PADDING E WIDTH (QUE É POSSÍVEL COM O "BLOCK" */
+    background-color: rgb(123, 86, 167);
+    padding: 1rem;
+    margin: 0.5rem;
+    display: inline-block;
+    text-align: center;
+    width: 14rem;
+}
+nav li a{
+   color: black;
+    
+}
+nav a:hover{
+    background-color: rgba(160, 109, 219, 0.486);
+}
+footer{
+    text-align: center;
+  padding: 5em;
+}
+main{
+    width: 70rem; /* O IDEAL É PESQUISAR A LARGURA DO SITE PARA O PÚBLICO ESPECÍFICO DO PROJETO*/
+    margin: auto;
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+main section{
+    border: 1px solid black; /* ESPESSURA, ESTILO E COR*/
+    padding: 2rem;
+    margin: 2rem;
+    width: 15rem;
+    background-color: rgba(160, 109, 219, 0.486) ;
+}

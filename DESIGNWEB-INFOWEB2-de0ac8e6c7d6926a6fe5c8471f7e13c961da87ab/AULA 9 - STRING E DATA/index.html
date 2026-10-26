@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STRING E DATA</title>
+</head>
+<body>
+    <h1>STRING E DATAS</h1>
+    <script>
+        for(let num=0; num<10; num++){
+            console.log(num)
+        }
+    </script>
+    <h2>STRING</h2>
+    <script>
+        let nome = 'INFOWEB';
+        console.log('COMPRIMENTO DA STRING: '+ nome.length);
+        console.log('COMPRIMENTO DA STRING: '+ 'SAMARA'.length);
+        console.log(`COMPRIMENTO DA STRING: ${'SAMARA'.length}`);
+        console.log(`POSIÇÃO DO CARACTER NA STRING: ${nome.charAt(0)}`);
+        // RECEBE A POSIÇÃO
+        console.log(`SUBSTITUI NA STRING ${nome.replace('INFO','INFORMÁTICA PARA ')}`)
+        console.log(`FARIA A STRING: ${nome.slice(1,4)}`)
+        // RECEBE A POSIÇÃO INICIAL E A POSIÇÃO FINAL (NÚMEROS INTEIROS)
+        console.log(`COLOCA EM MAIÚSCULA: ${'IFRN'.toUpperCase()}`)
+        console.log(`COLOCA TUDO EM MINÚSCULAS: ${nome.toLowerCase()}`)
+    </script>
+
+    <h2>EXEMPLO COM STRING</h2>
+    <p id="resultado"></p>
+    <p id="data"></p>
+    <script>
+        let nome2 = 'DESIGN WEB'
+        for(let i = 0; i<= nome2.length; i++){
+            document.getElementById('resultado').innerHTML += 
+            '<span style=font-size:'+(i+1)+'rem >'+ nome2.charAt(i) + '</span>'}
+    </script>
+
+    <h2>DATAS</h2>
+    <p id="datadehoje"></p>
+    <p id="data"></p>
+    <script>
+        // FUNÇÃO NATIVAS PARA DATAS
+        const data = new Date();
+        // COMO O JA ESTA NO FRONT, A DATA QUE SERÁ USADA É A DO PC,
+        // SE ESTA ESTIVER ERRADA, FICARÁ ERRADA
+        console.log(`DATA: ${data.getDate()}/${data.getMonth()+1}/${data.getFullYear()}`)
+        document.getElementById('datadehoje').innerHTML += `DATA: ${data.getDate()}/${data.getMonth()+1}/${data.getFullYear()}`
+        console.log('DATA DE HOJE:' +data.getDate());
+        console.log('MÊS ATUAL:' +data.getMonth());
+        console.log('ANO COMPLETO: '+data.getFullYear());
+        console.log('MINUTO: '+data.getMinutes());
+        console.log('SEGUNDO: '+data.getUTCSeconds());
+        console.log('HORA: '+data.getHours());
+
+        const cores = ['pink','green','red',]
+        function horaatual(){ //SINTAXE DE DEFINIÇÃO DE FUNÇÃO
+            var d = new Date();
+            // document.querySelector('#data').innerHTML = d.getSeconds();
+            document.querySelector('#data').innerHTML = 
+            `<span style=font-size:${d.getSeconds()}px >${d.getSeconds()} </span>`
+        }
+        setInterval(horaatual, 1000);
+        // setInterval É UM TIMER QUE RECEBE O NOME DA FUNÇÃO SEM PARÂMETROS
+        // E O TEMPO EM MILISEGUNDOS
+        // A CADA SEGUNDO IMPRIMIR 
+    </script>
+</body>
+</html>

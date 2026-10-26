@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <app-header></app-header>
+        <!-- PRECISA DA MARCAÇÃO DE ABERTURA E FECHAMENTO
+         E PRECISA FICAR DENTRO DA MARCAÇÃO COM O ID 'app' -->
+
+        <p>{{mensagem}}!! Hoje o lanche é: {{lanches[0]}}</p>
+        <ol>
+            <li v-for="(lanche, index) in lanches" :key="index"> {{lanche}}</li>
+            <!-- O v-for É UMA 'DIRETIVA' USADA PARA ESTRUTURA DE REPETIÇÃO
+             USA 2 VARIÁVEIS DE CONTROLE, NESTE EXEMPLO: LANCHE PARA UMA LISTA E INDEX PARA O INICIAL -->
+            <li v-for="(oto_lanche, index) in mais_lanches" :key="index"> {{oto_lanche}}</li>
+        </ol>
+        <!-- Chamada da variável dentro do html.
+             Para isso, é ncessário usar as duplas chaves. -->
+        <app-footer></app-footer>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="header.js"></script>
+    <script src="footer.js"></script> 
+    <script src="script.js"></script>
+
+    <!-- 
+        1- CRIAR A VARIÁVEL EM UM ARQUIVO SEPARADO
+        2- CHAMAR O MÉTODO DE COMPONENTE
+        3- INCLUIR O JS TEM QUE SER DEPOIS DO JS DO VUE E ANTES DO JS DO SCRIPT
+        4- COLOCAR A MARCAÇÃO DO COMPONENTE NO LOCAL QUE QUISER NO CÓDIGO HTML
+    -->
+   
+</body>
+</html>

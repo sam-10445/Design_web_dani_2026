@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #efd9d9;
+    color: #0f0f0f;
+}
+
+header{
+    background-color: #5a0d0d;
+    color: white;
+    padding: 25px;
+    text-align: center;
+}
+header h1{
+    margin-bottom: 15px;
+}
+header a{
+    color: #efd9d9;
+    text-decoration: none;
+}
+nav ol{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+nav a:hover{
+    color: #f6f4f6;
+}
+main{
+    padding: 30px;
+}
+article{
+    max-width: 900px;
+    margin: 0.8rem;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+}
+h2{
+    color: #5a0d0d;
+    margin-bottom: 20px;
+}
+p{
+    margin-bottom: 15px;
+}
+.comida{
+    background-color: #efd9d9;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+.comida h3{
+    color: #5a0d0d; 
+    margin-bottom: 10px;
+}
+article.pagina-promocoes {
+    max-width: 1000px;
+    margin: 3rem;
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.pagina-promocoes h2 {
+    color: #5a0d0d;
+    margin-bottom: 20px;
+}
+.pagina-promocoes .descricao {
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+.pagina-promocoes #painel {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+    margin-top: 25px;
+}
+.pagina-promocoes .promocao {
+    background-color: #efd9d9;
+    padding: 25px;
+    border-radius: 10px;
+    min-height: 150px;
+    border: 1px solid #e2c1c1;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.pagina-promocoes .promocao:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 5px 12px rgba(90, 13, 13, 0.15);
+}
+
+.pagina-promocoes .promocao h3 {
+    color: #5a0d0d;
+    margin-bottom: 12px;
+    font-size: 22px;
+    text-align: center;
+}
+
+.pagina-promocoes .promocao p {
+    line-height: 1.5;
+    margin-bottom: 0;
+    font-size: 18px;
+}
+
+@media (max-width: 600px) {
+    article.pagina-promocoes {
+        margin: 0.8rem;
+        padding: 20px;
+    }
+
+    .pagina-promocoes #painel {
+        grid-template-columns: 1fr;
+    }
+}

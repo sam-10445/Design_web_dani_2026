@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATIVIDADE</title>
+</head>
+
+<body>
+    <h1>ATIVIDADE</h1>
+    <h2>QUESTÃO 1</h2>
+    <!-- LISTAR OS NÚMEROS DE -10 A 10 -->
+    <p id="numeros"></p>
+    <script>
+        let texto = "";
+         for (let i = -10; i <= 10; i++) {
+            console.log(i);
+            texto += i + " ";
+        }
+        document.getElementById("numeros").innerHTML = texto;
+    </script>
+
+    <h2>QUESTÃO 2</h2>
+    <!-- FAZER UM ARARY COM DE 7 CORES E IMPRIMIR O SEU NOME
+*    7 VEZES COM AS CORES QUE ESTÃO NO ARRAY -->
+    <p id="cores"></p>
+    <script>
+        const cores = ["red", "green", "pink", "blue", "purple", "grey", "brown"]
+        let nome = "JULIA";
+        for (let i = 0; i < cores.length; i++) {
+            document.getElementById("cores").innerHTML += `<p style="color: ${cores[i]}">${nome}</p>`;
+        }
+    </script>
+
+    <h2>QUESTÃO 3</h2>
+    <!-- IMPRIMIR OS NÚMEROS DE 1 A 5 COM TAMANHOS DE TEXTO DIFERENTES -->
+    <p id="numtamanhos"></p>
+    <script>
+        for (let i = 1; i <= 5; i++) {
+            document.getElementById("numtamanhos").innerHTML += 
+            `<p style="font-size: ${i}rem">${i}</p>`;
+        }
+    </script>
+
+    <h2>QUESTÃO 4</h2>
+    <!-- FAZER UM FORMULÁRIO PEDINDO UM NOME E AO CLICAR MOSTRAR ESSE NOME
+*    IMPRESSO 5 VEZES, ONDE CADA VEZ TERÁ UM TAMANHO DIFERENTE DE 1REM A 5REM -->
+    <form id="formulario">
+        <label for="nome">Digite seu nome:</label>
+        <input type="text" id="nome">
+        <button type="submit" id="mostrar">MOSTRAR</button>
+    </form>
+    <p id="resultado"></p>
+    <script>
+        const formulario = document.getElementById('formulario');
+        formulario.addEventListener('submit', function(e) { e.preventDefault();
+            const nome = document.getElementById("nome").value;
+            document.getElementById("resultado").innerHTML = "";
+            for (let i = 1; i <= 5; i++) {
+                document.getElementById("resultado").innerHTML +=
+                    `<p style="font-size: ${i}rem">${nome}</p>`;
+            }
+        });
+    </script>
+
+    <h2>QUESTÃO 5</h2>
+    <!-- BOTÃO DE AUMENTAR A FONTE DO TEXTO DO BODY PARA 2REM E DIMINUIR
+*    A FONTE DO TEXTO PARA 0.5REM -->
+    <button id="aumentar">AUMENTAR FONTE</button>
+    <button id="diminuir">DIMINUIR FONTE</button>
+    <script>
+        const aumentar = document.getElementById('aumentar');
+        aumentar.addEventListener('click', function(e) {
+            document.body.style.fontSize = "2rem";
+        });
+        const diminuir = document.getElementById('diminuir');
+        diminuir.addEventListener('click', function(e) {
+            document.body.style.fontSize = "0.5rem";
+        });
+    </script>         

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVENTOS E MAIPULAÇÃO DE DOM</title>
+    <style>
+        body{
+            height: 500rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>EVENTOS E MANIPULAÇÃO DE DOM</h1>
+    <form action="" name="cadastro">
+        <label>NOME: <input type="text" id="nome"></label>
+        <label>CIDADE:
+            <select id="cidade">
+                <option value="natal">NATAL</option>
+                <option value="recife">RECIFE</option>
+                <option value="jp">JOÃO PESSOA</option>
+            </select>
+        </label>
+        <input type="submit" value="ENVIAR">
+    </form>
+
+    <script>
+        function bodyclick(){ // CRIAÇÃO DA FUNÇÃO
+            console.log("BODY FOR CLICADO");
+        }
+        // bodyclick() // AQUI É A CHAMADA DA FUNÇÃO
+        /* A CRIAÇÃO DA FUNÇÃO É APENAS UMA ESTRUTURA,
+        A FUNÇÃO PRECISA SER CHAMADA! */
+        document.body.addEventListener("click", bodyclick);
+        // EVENTO CLICK NO BODY
+        // 
+        document.body.addEventListener("click", function (e){
+            // AQUI EU COLOCO A ESTRUTURA DA FUNÇÃO 
+        })
+    
+        function eventoload(){
+            console.log('EVENTO DE CARREGAR A PÁGINA CHAMADO!')
+        }
+        window.addEventListener("load", eventoload);
+        // SEMPRE QUE A PÁGINA FOR CARREGADA, ESTE MÉTODO SERÁ CHAMADO
+
+        function eventscroll(){
+            console.log("FUNÇÃO DE SCROLL CHAMADA!")
+        }
+        window.addEventListener("scroll", eventscroll);
+        // PARA ESTA FUNÇÃO APARECER É NECESSÁRIO TER BARRA DE ROLAGEM NA PÁGINA
+        // ISTO É, COLOCAR HEIGTH NO CSS DO BODY, OU NA PÁGINA JÁ TER MUITO CONTEÚDO
+
+        const input = document.getElementById("nome");
+        // const cidade = document.getElementById("cidade");
+
+        function eventkeydown(e){
+            console.log("EVENTO KEYDOWN CHAMADO! TECLA APERTADA: "+e.key);
+            // .key É UMA PROPRIEDADE QUE RETORNA A TECLA DIGITADA
+        }
+        input.addEventListener("keydown", eventkeydown);
+
+        const form = document.cadastro; // FICOU SIMPLES PORQUE PEGOU O NOME DO FORM
+        const cidade = form.cidade;
+        // CRIANDO VARIÁVEIS PARA ÉGAR COMPOS ESPECÍFICOS DO FORMULÁRIOS
+        // É POSSÍCIVEL APENAS USAR getElementById NO SELECT...
+
+        function eventchange(){
+            console.log("EVENT GHANGE CHAMADO!!");
+        }
+        cidade.addEventListener('change', eventchange);
+        // O EVENTO CHANGE É JUSTAMENTE PARA O COMPONENTE SELECT 
+
+        function eventmousemove(e){
+            conlose.log("MOUSE MOVE: "+e.clientX);
+            // clientX  PROPRIEDADE QUE PEGA O XQUE O MOUSE ESTÁ
+        }
+        window.addEventListener('mousemove', eventmousemove);
+    </script>
+</body>
+</html>

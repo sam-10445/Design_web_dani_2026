@@ -1,0 +1,9 @@
+const AppHeader ={
+    // VARIÁVEL CRIADA PARA SER USADA COMO COMPONENTE
+    // O ACENTO GRAVE VAI AJUDAR NAS ASPAS QUE NESSE BLOCO 
+    template: `
+        <header>
+            <h1>LANCHES IFRN</H1>   
+        </header>`
+} // O v-for É UMA DIRETIVA USADA PARA ESTRUTURA DE REPETIÇÃO
+// USA 2 VARIÁVEIS DE CONTROLE, NESTE EXEMPLO: LANCHE

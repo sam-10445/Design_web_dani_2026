@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LANCHES IFRN</title>
+    <link rel="stylesheet" href="../inc/principal.css">
+</head>
+<body>
+    <div id="app">
+        <app-header></app-header>
+        <main>
+            <h2>DASHBOARD ADMINISTRATIVO </h2>
+            <p>
+                TOTAL DE ITENS DE LANCHES INSERIDOS {{lanches.length}}
+            <!-- lengt: PROPRIEDADE DE LISTA QUE PEGA O COMPRIMENTO
+             NESTE CASO NOS RETORNA O NÚMERO TOTAL DE ITENS INSERIDOA EM LANCHES -->
+            </p>
+            <fieldset class="adicionar">
+            <!-- fieldset É UMA MARCAÇÃO QUE ORGANIZA COMPONENTES NO FORMULÁRIP
+             A MARCAÇÃO DE FORM NÃO É USADA AQUI PORQUE NÃO IREMOS SUBMETER DADOS PARA O BACK -->
+                <legend>INSERIR LANCHES</legend>
+                <input type="text" placeholder="NOVO LANCHE..." v-model="novoLancheInput">
+                <!-- v-mode É COMUNICAÇÃO DE ENVIO DE DADOS PAR O VUE -->
+                <button class="add" @click="novoLanche()">INSERIR</button>
+                <!-- @click É O EVENTO DE CLICK QUE CAHAMA A FUNÇÃO novoLanche -->
+            </fieldset>
+            <ol>
+                <li v-for="lanche in lanches" class="lanche">
+                    {{lanche.descricao}}
+
+                </li>
+            </ol>
+
+            <fieldset class="adicionar">
+            <!-- fieldset É UMA MARCAÇÃO QUE ORGANIZA COMPONENTES NO FORMULÁRIP
+             A MARCAÇÃO DE FORM NÃO É USADA AQUI PORQUE NÃO IREMOS SUBMETER DADOS PARA O BACK -->
+                <legend>INSERIR FRUTAS</legend>
+                <input type="text" placeholder="NOVA FRUTA..." v-model="novafrutaInput">
+                <!-- v-mode É COMUNICAÇÃO DE ENVIO DE DADOS PAR O VUE -->
+                <button class="add" @click="novafruta()">INSERIR</button>
+                <!-- @click É O EVENTO DE CLICK QUE CAHAMA A FUNÇÃO novoLanche -->
+            </fieldset>
+            <ol>
+                <li v-for="fruta in frutas" class="frutas">
+                    {{fruta.descricao}}
+
+                </li>
+            </ol>
+        </main>
+        
+        <app-footer></app-footer>
+
+    </div>
+
+
+    
+    
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="../inc/header-footer.js"></script>
+    <!-- precisa vir nessa ordem!! -->
+    <script src="../inc/script.js"></script>
+</body>
+</html>

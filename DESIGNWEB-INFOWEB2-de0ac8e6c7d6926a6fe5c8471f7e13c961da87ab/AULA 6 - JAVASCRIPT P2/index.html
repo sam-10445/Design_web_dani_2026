@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPERADORES ARITMÉTICOS</title>
+</head>
+<body>
+    <h1>JAVASCRIPT</h1>
+    <h2>OPERADORES ARITMÉTICOS</h2>
+    <script>
+        console.log('OPERADORES ARITMÉTICOS');
+        console.log(54+98);
+        console.log(548-98);
+        console.log(548*98);
+        console.log(548/98);
+        let a = 8;
+        console.log('VALOR DE A++:')
+        console.log(a++); 
+        /* INCREMENTO: QUANDO O '++' ESTÁ DEPOIS DA VARIÁVEL É
+        IMPRESSA E SÓ DEPOIS ADICIONA +1 */
+        console.log('VALOR DE A:')
+        console.log(a);
+        console.log('VALOR DE ++A:')
+        console.log(++a);  
+        /* INCREMENTO: QUANDO O '++' É ANTES, A VARIÁVEL JÁ RECEBE 
+        +1 E DEPOIS É IMPRESSA */
+        console.log(a--); 
+        console.log(--a); 
+        /* DECREMENTO: MESMA LÓGICA DO INCREMENTO, MAS PARA -1*/
+    </script>
+
+    <h2>OPERADORES RELACIONAIS</h2>
+    <script>
+        /* AVALIA SE SÃO IGUAIS, MAS NÃO O TIPO (INT, STRING...*/
+        /* AVALIA SE SÃO IGUAIS NO TIPO E NO VALOR */
+        console.log(4==6);
+        console.log(4!=6); /* SE SÃO DIFERENTES */
+        console.log(4>7);
+        console.log(4==4 && 5==8); /* && RETORNA VERDADEIRO SE AMBOS FOREM VERDADEIROS */
+        console.log(4==6 || 5==7); /* || RETORNA VERDADEIRO SE UMA FOR VERDADEIRA */
+    </script>
+
+    <h2>ESTRUTURA CONDICIONAL</h2>
+    <script>
+        let lanche = "bolo";
+        if(lanche == "bolo"){ // É NECESSÁRIO COLOCAR UM OPERADOR CONDICONAL
+            console.log("OPA!! HOJE É BOM");
+        }
+        else
+            console.log(":(");
+
+        /* IF´S ANINHADOS!! */
+        lanche = "cuscuz";
+        if( lanche == "bolo"){
+            console.log("HOJE É BOLOOO!!");
+        }
+        else
+            if( lanche == "cuscuz"){
+                console.log("HOJE É CUSCUZ!!");
+            }
+
+        /* ESTRUTURA CONDICIONAL: SWITCH */
+        let opcao = 2
+        switch(opcao){ /* É NECESSÁRIO COLOCAR A VARIÁVEL NO PARENTESES */
+            case 1: console.log("O VALOR É 1"); break;
+            case 1: console.log("O VALOR É 2"); break;
+            default: console.log("NENHUMA DAS OPÇÕES!");
+        }
+
+        opcao = "handebol"
+        switch(opcao){ /* É NECESSÁRIO COLOCAR A VARIÁVEL NO PARENTESES */
+            case "basquete": console.log("HOJE É BASQUETE"); break;
+            /* O BREAK É NECESSÁRIO PARA PARAR O SWITCH */
+            case "handebol": console.log("HOJE É HANDEBOL"); break;
+            default: console.log("NENHUMA DAS OPÇÕES!");
+        }
+    </script>
+    <!-- MARCAÇÃO DE BUTTON É UM BOTÃO MAIS USADO PARA INTERAÇÃO
+    COM JAVASCRIPT, VISUALMENTE É IGUAL AO INPUT DO TIPO SUBMIT
+    (SÓ QUE ESTE É USADO EM UMA MARCAÇÃO DE FORM) -->
+    <button id="incrementar">INCREMENTAR</button>
+    <span id="resultado">0</span>
+    <!--  SPAN É UMA MARCAÇÃO SEM VALOR SEMÂNTICO DO TIPO INLINE -->
+    <Script>
+        const incrementar = document.getElementById('incrementar');
+        /* CONST É A DEFINIÇÃO DE UMA VARIÁVEL QUE NÃO MUDARÁ O VALOR DEPOIS*/
+        incrementar.addEventListener('click', function(e){
+            //let resultado = document.getElementById("resultado").textContent;
+            document.getElementById("resultado").innerHTML = 
+            parseInt(document.getElementById("resultado").textContent)+1
+        })
+    </Script>
+
+    <button id="decrementar">DECREMENTAR</button>
+    <span id="resultados">0</span>
+    <!--  SPAN É UMA MARCAÇÃO SEM VALOR SEMÂNTICO DO TIPO INLINE -->
+    <Script>
+        const decrementar = document.getElementById('decrementar');
+        /* CONST É A DEFINIÇÃO DE UMA VARIÁVEL QUE NÃO MUDARÁ O VALOR DEPOIS*/
+        decrementar.addEventListener('click', function(e){
+            //let resultado = document.getElementById("resultado").textContent;
+            document.getElementById("resultados").innerHTML = 
+            parseInt(document.getElementById("resultados").textContent)-1
+        })
+    </Script>
+</body>
+</html>

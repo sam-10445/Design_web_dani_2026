@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROVA 3B</title>
+<body>
+    <input type="text" id="nome">
+    <button id="botao">ENVIAR</button>
+    <p id="resultados"></p>
+    <script>
+        const nomes = [];
+        const botao = document.getElementById('botao');
+        botao.addEventListener("click", function (e) {
+            const nome = document.getElementById('nome').value;
+            nomes.push(nome);
+            const hora = new Date();
+            const minutos = hora.getMinutes();
+            const segundos = hora.getSeconds();
+            const ultimoNome = nomes[nomes.length - 1];
+            document.getElementById('resultados').innerHTML +=
+                ultimoNome + " " + minutos + ":" + segundos + '<br>'
+                
+           
+        });
+    </script>
+
+</body>
+</html>

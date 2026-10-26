@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estruturas de Controle</title>
+</head>
+<body>
+    <h1>Estruturas de Controle</h1>
+    <p id="texto"></p>
+    <p id="alunos"></p>
+    <script>
+        const alunos = ['Elverty', 'Samara', 'Yasmim', 'Juan', 'Júlia'];
+        document.getElementById('texto').innerHTML = alunos.sort().join(' - ');
+        // .sort() - ordenação
+        // .join(' - ') - imprime os itens e os separa com o conteúdo entre parênteses
+
+        // FOR
+        for(let i=0 ; i<10 ; i++){
+            // let i=0 - criar a variável e define o valor inicial
+            // for recebe 3 parâmetros: valor inicial, operador lógico e o incremento
+            // i++ ou ++i - incremento de mais 1
+            console.log(i);
+            // imprime no console (inspecionar/F12)
+        }
+        for(let j=10; j>0; j--){
+            console.log(j)
+        }
+
+        // forEach
+        alunos.forEach(item =>{
+            // o nome da variável do array (alunos)
+            // método forEach
+            // dentro do forEach é necessário criar uma variável que representa cada item
+            console.log(item);
+            document.getElementById('alunos').innerHTML += item + "<br>" ;
+            // o "+=" pega o valor que já tinha no parágrafo e adiciona mais
+            // "+" é um operador aritmético e um operador de concatenação, isto é, une 2 termos
+        })
+
+        // while
+        let x = 0;
+        let texto = ""
+        while(x<10){
+            console.log(texto+="O número é: "+x+". \n");
+            x++; // tem que colocar o incremento, caso contrário a página trava!
+        }
+    </script>
+
+
+    <!-- DEIXAR O TEXTO MAIOR AOS POUCOS E MUDAR FUNDO COM BOTÃO -->
+    <h2>Exemplos</h2>
+    <p id="resultado"></p>
+    <ol id="listaalunos"></ol>
+    
+    <script>
+        // imprimir um nome com tamanhos de texto crescentes de 1 a 5
+        const resultado = document.getElementById("resultado");
+        for(let i=0; i<5; i++){
+            resultado.innerHTML += "<span style='font-size:"+i+"rem'>InfoWeb</span><br>"; 
+            // o que está entre aspas é estático e o que fica fora é dinâmico (variável)
+            resultado.innerHTML += `<span style='font-size: ${i}rem'>InfoWeb</span><br>`
+            // outra estratégia para imprimir uma variável
+        }
+        alunos.forEach(item=>{
+            document.getElementById("listaalunos").innerHTML += "<li>"+item+"</li>"
+        })
+
+    </script>
+    <!-- span é uma marcação sem valor semântico com comportamento inline, então faz sentido colocar span dentro de parágrafo. -->
+    <!-- 
+        css inline é muito usado no js pois este inclui e remove css de forma mais ágil
+    -->
+    <button id="mudabg"> Muda BG</button>
+    <script>
+        const mudabg = document.getElementById("mudabg");
+        mudabg.addEventListener('click', function (e){
+            document.body.style.backgroundColor = 'azure'
+            // não preciso colocar id no body (mas poderia)
+            // .style usa a propriedade do js, que na sintaxe as propriedades mudam um pouco
+            // background-color = backgroundColor
+    })
+    </script>
+</body>
+</html>

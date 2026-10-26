@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=initial-scale=1.0">
+    <title>JAVASCRIPT - AULA 1</title>
+</head>
+
+    <script>
+        /*
+            1- PARA USAR O JAVASCRIP HÁ 3 POSSIBILIDADE:
+            TAG DE SCRIPT INCORPORADO, TAG DE SCRIPT EXTERNO E A OUTRA FORMA
+            DENTRO DA TAG (PORÉM NÃO RECOMENDADA)
+            2- JAVASCRIPT É UMA LINGUAGEM DE PROGRAMAÇÃO FRONTEND (LADO CLIENTE)
+            3- JAVASCRIPT NÃO É JAVA
+            4- JS SERVE PARA CRIAR COMPORTAMENTO PARA O DESENVOLVIMENTO WEB
+            5- EXEMPLO DE USO: GALERIAS DE FOTOS, VALIDAÇÃO DE FORMULÁRIOS, 
+            MODAL (JANELA QUE ABRE SOBRE A PÁGINA)
+            6- FRAMEWORKS EM JAVASCRIPT SÃO USADOS PARA AGILIZAR/FACILITAR O 
+            DSENVOLVIMENTO, EXEMPLO: BOOTSTRAP
+        */ 
+    </script>
+<body>
+    <h1>JAVASCRIPT - AULA1</h1>
+    <h2>OBJETO WINDOW</h2>
+    <script>
+        window.alert ("OLÁ MUNDO");
+        /* WINDOW É UM OBJETO, ALERT É O MÉTODO, QUE RETORNA UMA JANELA*/ 
+        let fds = window.confirm("OCOMO FOI O FIM DE SEMANA?");
+        /* 'LET' É  UMA DEFINIÇÃO DE VARIÁVEL, QUE VAI RECERBER UM RESULTADO DO CORFIRME
+            'COMFIRM' É UM MÉTODO QUE MOSTRA DUAS OPÇÕES: COMFIRMA OU CANCELAR  RETORNA UM TRUE OU FALSE E DEPOIS COLOCA ESSE VALOR*/ 
+        window.alert(fds);
+        let cor = window.prompt("QUAL A SUA COR FAVORITA?")
+        window.alert(cor)
+
+    </script>
+    <h2>OBJETO DOCUMENT</h2>
+    <p id="nome"> IFRN CNAT INFOWEB</p>
+    <script>
+        document.getElementById('nome').style.color = cor;
+        /* DOM - MODELO DE OBJETO DO DOCUMENTO POR ISSO O PARÁGRAFO 
+        COM ID PRECISA FICAR ANTES DO COMANDO, DOCUEMNT É UM OBJETO
+        'getElementByid' É UM MÉTODO QUE PAGA O ELEMENTO QUE TEM  
+        O ID IGUAL A NOME 'STYLE' É UMA PROPRIEDADE, ASSIM COMO COLOR
+        'GREEN' É O VALOR RELACIONADO COM A PROPRIEDADE COLOR */ 
+        document.getElementById('nome').innerHTML = 'INFOWEB, HOJE TEM ABERTURA!'
+        /* 'innerHTML' INSERIR HTML NA MARCAÇÃO QUE TEM O ID NOS PARENTESES */
+        document.write("<p>MARCAÇÃO INSERIDA PELO JS</p>");
+        /* O MÉTODO WRITE ESCREVE NO HTML*/
+    </script>
+
+    <h2>VARIÁVEIS</h2>
+    <script>
+        let curso = "infoweb" // QUANDO É STRING USAR ASPAS
+        let num = "3"
+        let num2 = "5"
+        let boo = true;
+        let float = 3.5;
+
+        console.log(num+num2)
+        /* PRA DEFINIR UMA VARIÁVEL É NECESSÁRIO USAR LET OU CONST
+        LET É PARA VARIÁVEL QUE PODERÁ MUDAR O VALOR DEPOIS
+        CONST É UMA VARIÁVEL QUE NÃO MUDARÁ O VALOR DEPOIS (ISTO É, CONSTANTE*/
+    </script>
+</body>
+</html>

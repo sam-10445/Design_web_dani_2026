@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPERADORES ARITMÉTICOS</title>
+</head>
+<body>
+    <h1>JAVASCRIPT</h1>
+    <h2>OPERADORES ARITMÉTICOS</h2>
+    <script>
+        console.log('OPERADORES ARITMÉTICOS');
+        console.log(548+98);
+        console.log(548-98);
+        console.log(548*98);
+        console.log(548/98);
+        let a = 8;
+        console.log('VALOR DE A++: ');
+        console.log(a++);
+        // INCREMENTO: QUANTO 0 '++' ESTÁ DEPOIS DA VARIÁVEL
+        // É IMPRESSA E SÓ DEPOIS ADICIONA +1
+
+        console.log('VALOR DE A: ');
+        console.log(a);
+
+        console.log('VALOR DE ++A: ');
+        console.log(++a);
+        // INCREMENTO: QUANDO O '++' É ANTES , A VARIÁVEL
+        // JÁ REBECE +1 E DEPOIS É IMPRESSA 
+
+        console.log(a--);
+        console.log(--a);
+        // DECREMENTO: MESMA LÓGICA DO INCREMENTO, MAS SENDO PARA -1
+    </script>
+    
+    <h2>OPERADORES RELACIONAIS</h2>
+    <script>
+        // AVALIA SE SÃO IGUAIS, MAS NÃO O TIPO (INT. STRING, ...)
+        // AVALIA SE SÃO IGUAIS NO TIPO E NO VALOR
+        console.log(4==6);
+        console.log(4!=6);; // SE SÃO DIFERENTES
+        console.log(4>7);
+        console.log(4==4 && 5==8); // && RETORNA VERDADEIRO SE AMBOS FOREM VERDADEIROS
+        console.log(4==6 || 5==7); // || RETORNA VERDADEIRO SE UMA FOR VERDADEIRA
+    </script>
+
+    <h2>ESTRUTURAS CONDICIONAIS</h2>
+    <script>
+        let lanche = "bolo"
+        if(lanche == "bolo"){
+            console.log("OPA! HOJE É BOLO");
+        }
+        else
+            console.log(":(");
+
+        // IF´S ANINHADOS!!
+        lanche = "cuscuz";
+        if(lanche == "bolo"){
+            console.log("HOJE É BOLOOO!!");
+        }
+        else 
+            if(lanche == "cuscuz"){
+                conlsole.log("HOJE É CUSCUZ!");
+            }
+
+        // ESTRUTURAS CONDICIONAIS: SWITCH
+        let opcao = 2
+        switch(opcao){ 
+            // É NECESSÁRIO COLOCAR A VARIÁVELNO PARENTESES
+            case 1: console.log("O VALOR É 1"); break
+            case 1: console.log("O VALOR É 2"); break
+            default: console.log("NENHUMA DAS OPÇÃO!")
+        }
+
+        opcao = "handenol"
+        switch(opcao){
+            case "basquete": console.log("HOJE É BASQUETE"); break;
+            // O BREAK É NECESSÁRIO PARA PARAR O SWITCH
+            case "handebol": console.log("HOJE É HAANDEBOOOOL"); break;
+            default: console.log("NENHUMA DAS OPÇÕES");
+        }
+    </script>
+
+        <!--  A MARCAÇÃO DE BUTTON É UM BOTÃO MAIS USADO PARA INTERAÇÃO
+        COM JAVASCRIPT, VISUALMENTE É IGUAL O INPUT DO TIPO SUBMIT
+        (QUE SÓ É USADO EM MARCCCAÇÃO DE FORM) 
+        -->
+        <button id="incrementar">INCREMENTAR</button>
+        <span id="resultado">0</span>
+        <!-- SPAN É UMA MARCAÇÃO SEM VALOR SEMÂNTICO DO TIPO INLINE -->
+
+    <script>
+        const incrementar = document.getElementById('incrementar');
+        // CONST ÉA DEFINIÇÃO DE UMA VARIÁVEL QUE NÃO MUDARÁ O VALOR DEPOIS
+        incrementar.addEventListener('click', function(e){
+            document.getElementById("resultado").innerHTML =
+            parseInt(document.getElementById("resultado").textContent)+1
+        })
+    </script>
+
+    <button id="decrementar"> DECREMENTAR</button>
+    <span id="resultados">0</span>
+
+    <script>
+        const decrementar = document.getElementById('decementar');
+        decrementar.addEventListener('click', function(e){
+            document.getElementById("resultados").innerHTML =
+            perseInt(document.getElementById("resultados").textContent)-1
+        })
+    </script>
+</body>
+</html>
