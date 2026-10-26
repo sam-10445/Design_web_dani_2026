@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Desafio</title>
+</head>
+<body>
+    <!-- UMA MISTURA DE TUDO -->
+    <form id="form">
+        <label for="nome">NOME:</label>
+        <input type="text" id="nome">
+        <br><br>
+
+        <label for="cor">COR:</label>
+        <select id="cor">
+            <option value="red">VERMELHO</option>
+            <option value="blue">AZUL</option>
+            <option value="green">VERDE</option>
+            <option value="purple">ROXO</option>
+        </select>
+
+        <br><br>
+
+        <button type="submit">GERAR</button>
+
+    </form>
+
+    <p id="resultado"></p>
+
+   <script>
+        const formulario = document.getElementById("form");
+
+    formulario.addEventListener("submit", function(e){
+
+        e.preventDefault();
+
+        let nome = document.getElementById("nome").value;
+
+        let cor = document.getElementById("cor").value;
+
+        document.getElementById("resultado").innerHTML = "";
+
+        for(let i = 1; i <= 5; i++){
+
+            document.getElementById("resultado").innerHTML +=
+            `<p style="font-size:${i}rem; color:${cor}">${nome}</p>`;
+
+        }
+
+    });
+   </script>
+</body>
+</html>

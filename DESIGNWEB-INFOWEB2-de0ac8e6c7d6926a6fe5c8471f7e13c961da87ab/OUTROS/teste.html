@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OUTRO</title>
+</head>
+<body>
+    <h1>OUTROS</h1>
+
+    <!-- IMPRIME UMA LETRR DE CADA COR -->
+    <input type="text" id="nome">
+    <button id="mostrar">MOSTRAR</button>
+    <p id="resultado"></p>
+<script>
+    const mostrar = document.getElementById("mostrar");
+    mostrar.addEventListener("click", function(e) {
+    let nome = document.getElementById("nome").value;
+    const cores = ["red", "blue", "green", "purple", "orange", "pink"];
+    document.getElementById("resultado").innerHTML = "";
+    for(let i = 0; i < nome.length; i++) {
+        document.getElementById("resultado").innerHTML +=
+        `<span style="color: ${cores[i % cores.length]}">${nome.charAt(i)}</span>`;
+    }
+});
+</script>
+
+<!-- IMPRIME UMA LETRR DE CADA COR EM UM NOME FIXO -->
+<script>
+    const cores = ["red", "blue", "green", "purple", "orange"];
+    let nome = "JULIA";
+    for(let i = 0; i < nome.length; i++) {
+        document.getElementById("resultado").innerHTML +=
+        `<span style="color: ${cores[i % cores.length]}">${nome.charAt(i)}</span>`;
+    }
+</script>
+
+<!-- NOME COM VARIOS TAMANHOS -->
+ <form id="formulario">
+        <input type="text" id="nomes">
+        <button type="submit">GERAR</button>
+    </form>
+    <p id="resultados"></p>
+    <script>
+        const formulario = document.getElementById("formulario");
+        formulario.addEventListener("submit", function(e){
+        e.preventDefault();
+        const nome = document.getElementById("nomes").value;
+        document.getElementById("resultados").innerHTML = "";
+        for(let i = 1; i <= 7; i++){
+            document.getElementById("resultados").innerHTML +=
+            `<p style="font-size:${i}rem">${nome}</p>`;
+    }
+});
+    </script>
+
+    <!-- ARRAY DE NOMES  -->
+    <p id="aluno"></p>
+    <script>
+        const alunos = ["JULIA", "REBECA", "JUAN", "DANI", "THALIS"];
+        for(let i = 0; i < alunos.length; i++){
+        document.getElementById("aluno").innerHTML +=
+        `<p>${alunos[i]}</p>`;
+}
+    </script>
+
+    <p id="data"></p>
+    <script>
+        const data = new Date();
+        let dia = data.getDate();
+        let mes = data.getMonth() + 1;
+        let ano = data.getFullYear();
+        document.getElementById("resultado").innerHTML =
+        `${dia}/${mes}/${ano}`;
+        // `DIA: ${dia}<br>
+        // MÊS: ${mes}<br>
+        // ANO: ${ano}`;
+    </script>
+
+    <!-- AUMENTAR A FONTE DO BODY -->
+    <button id="aumentar">AUMENTAR</button>
+    <button id="diminuir">DIMINUIR</button>
+
+    <p>Texto para testar o tamanho da fonte.</p>
+    <script>
+        const aumentar = document.getElementById("aumentar");
+        aumentar.addEventListener("click", function(e){
+            document.body.style.fontSize = "3rem";
+        });
+        const diminuir = document.getElementById("diminuir");
+        diminuir.addEventListener("click", function(e){
+            document.body.style.fontSize = "0.5rem";
+
+        });
+    </script>
+
+    <!-- NÚMEROS ALEATÓRIOS -->
+    <button id="gerar">GERAR NÚMERO</button>
+    <p id="num"></p>
+    <script>
+        const gerar = document.getElementById("gerar");
+        gerar.addEventListener("click", function(e){
+        let numero = Math.round(Math.random() * 100);
+        document.getElementById("num").innerHTML = numero;
+});
+    </script>
+
+    <!--  -->
+    
+</body>
